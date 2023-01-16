@@ -1,0 +1,27 @@
+system@INLEN8520061965:~/bus3$ splint ./busreservationsystem
+Splint 3.1.2 --- 20 Feb 2018
+
+Command Line: Unrecognized file extension:
+    ./busreservationsystem (assuming ./busreservationsystem is C source code)
+  warn when command line file does not have a recognized extension (Use
+  -fileextensions to inhibit warning)
+busreservationsystem:1:2: Invalid character (ascii: 127), skipping character
+  Code cannot be parsed.  For help on parse errors, see splint -help
+  parseerrors. (Use -syntax to inhibit warning)
+busreservationsystem:1:6: Invalid character (ascii: 2), skipping character
+busreservationsystem:1:7: Invalid character (ascii: 1), skipping character
+busreservationsystem:1:8: Invalid character (ascii: 1), skipping character
+busreservationsystem:1:9: Invalid character (ascii: 0), skipping character
+busreservationsystem:1:10: Invalid character (ascii: 0), skipping character
+busreservationsystem:1:11: Invalid character (ascii: 0), skipping character
+busreservationsystem:1:12: Invalid character (ascii: 0), skipping character
+busreservationsystem:1:13: Invalid character (ascii: 0), skipping character
+busreservationsystem:1:14: Invalid character (ascii: 0), skipping character
+busreservationsystem:1:15: Invalid character (ascii: 0), skipping character
+busreservationsystem:1:16: Invalid character (ascii: 0), skipping character
+busreservationsystem:1:17: Invalid character (ascii: 0), skipping character
+busreservationsystem:1:18: Invalid character (ascii: 3), skipping character
+busreservationsystem:1:19: Invalid character (ascii: 0), skipping character
+busreservationsystem:1:20: Parse Error: Non-function declaration: ELF :
+    int. (For help on parse errors, see splint -help parseerrors.)
+*** Cannot continue.

@@ -1,0 +1,29 @@
+BIN = /home/system/busreservationsystem/sprint2/CUT/Code/bin
+INC = /home/system/busreservationsystem/sprint2/CUT/Code/inc
+SRC = /home/system/busreservationsystem/sprint2/CUT/Code/src
+OBJ = /home/system/busreservationsystem/sprint2/CUT/Code/obj
+
+CFLAGS = -c -g -Wall
+LFLAGS = -o
+GCC = g++
+CVFLAGS = -Wall -c -g
+IFLAGS = -I $(INC)
+
+all : $(BIN)/client
+
+$(OBJ)/client.o : $(SRC)/main.cpp
+        $(GCC) $(CFLAGS) $(SRC)/main.cpp $(IFLAGS)
+        mv *.o/home/system/busreservationsystem/sprint2/CUT/Code/obj
+
+
+$(OBJ)/bus.o : $(SRC)/bus.cpp
+        $(GCC) $(CFLAGS) $(SRC)/bus.cpp $(IFLAGS)
+        mv *.o/home/system/busreservationsystem/sprint2/CUT/Code/obj
+
+$(OBJ)/ticket.o : $(SRC)/ticket.cpp
+        $(GCC) $(CFLAGS) $(SRC)/ticket.cpp ($IFLAGS)
+        mv *.o/home/system/busreservationsystem/sprint2/CUT/Code/obj
+
+
+$(BIN)/client : $(OBJ)/client.o  $(OBJ)/bus.o $(OBJ)/ticket.o 
+        $(GCC) $(OBJ)/client.o $(OBJ)/bus.o $(OBJ)/ticket.o $(LFLAGS) $(BIN)/client
