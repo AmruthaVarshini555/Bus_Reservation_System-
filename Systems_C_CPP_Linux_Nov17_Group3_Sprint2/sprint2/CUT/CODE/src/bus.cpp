@@ -15,43 +15,43 @@ void Bus::addBus()
 {
     fstream bus;
     system("clear");
-    cout<<"\n--------ADD BUS---------";
-    cout << "\n\tEnter Bus Number: ";
+    cout<<"\n--------ADD BUS---------\n";
+    cout << "\nEnter Bus Number: ";
     cin.ignore();
     cin.getline(busNo, SIZE);
-    cout << "\n\tEnter Source:-> ";
+    cout << "\nEnter Source:-> ";
     cin.getline(source,BUFFER_SIZE);
-    cout << "\n\tEnter Destination:-> ";
+    cout << "\nEnter Destination:-> ";
     cin.getline(destination,BUFFER_SIZE);
-    cout << "\n\tEnter Source Time:-> ";
+    cout << "\nEnter Source Time:-> ";
     cin.getline(sourceTime,BUFFER_SIZE);
-    cout << "\n\tEnter Destination Time:-> ";
+    cout << "\nEnter Destination Time:-> ";
     cin.getline(destinationTime,BUFFER_SIZE);
-    cout << "\n\tEnter Bus Fare:-> ";
+    cout << "\nEnter Bus Fare:-> ";
     cin >> busFare;
-    cout << "\n\tBus Added Successfully...!!\n";
+    cout << "\nBus Added Successfully...!!\n";
     cout<<"\nPress enter to continue..";
     getchar();
     bus.open("buses.txt", ios::out | ios::app);
     bus.write((char *)this, sizeof(*this));
     bus.close();
-    //LOG_INFO("\nADDED THE BUS");
+    LOG_INFO("\nADDED THE BUS");
 }
 // SHOW BUS DETAILS
 void Bus::showBusDetails()
 {
     cout<<"\n-------------------BUS--------------------";
-    cout << "\n\tBus No:-> " << getBusNo();
-    cout << "\n\tSource:-> " << getSource();
-    cout << "\n\tDestination:-> " << getDestination();
-    cout << "\n\tTime:-> " << getSourceTime() << " - " << getDestinationTime();
-    cout << "\n\tTotal Seats:-> " << getMaxSeats();
-    cout << "\n\tSeats Remaining:-> " << (getMaxSeats() - getBookedSeats());
+    cout << "\n\nBus No:-> " << getBusNo();
+    cout << "\nSource:-> " << getSource();
+    cout << "\nDestination:-> " << getDestination();
+    cout << "\nTime:-> " << getSourceTime() << " - " << getDestinationTime();
+    cout << "\nTotal Seats:-> " << getMaxSeats();
+    cout << "\nSeats Remaining:-> " << (getMaxSeats() - getBookedSeats());
     cout << fixed << setprecision(2);
-    cout << "\n\tBus Fare:-> "<< getBusFare();
-    cout<<"\nPress enter to continue..";
+    cout << "\nBus Fare:-> "<< getBusFare();
+    cout<<"\nPress enter to continue..\n";
     getchar();
-    //LOG_INFO("SHOW BUS DETAILS");
+    LOG_INFO("SHOW BUS DETAILS");
 }
 
 // VIEW ALL BUS INFO
@@ -60,8 +60,10 @@ void Bus::showAllBus()
     system("clear");
     fstream bus;
     bus.open("buses.txt", ios::in | ios::app | ios::binary);
-    if (!bus)
-        cout << "\n\tFile Not Found...!!!";
+    if (!bus){
+        cout << "\n\tFile Not Found...!!!\n";
+        getchar();
+    }
     else
     {
         cout<<"\n-----------BUSES-----------";
@@ -73,10 +75,9 @@ void Bus::showAllBus()
         }
         bus.close();
     }
-    //LOG_INFO("\nVIEW ALL BUS INFO");
+    LOG_INFO("\nVIEW ALL BUS INFO");
 }
-
-// VIEW BUS INFO
+//Show bus details
 void Bus::viewBusDetails()
 {
     system("clear");
@@ -89,7 +90,7 @@ void Bus::viewBusDetails()
     cin.getline(bNo,SIZE);
 
     system("clear");
-    cout<<"\n-------------BUS INFO------------";
+    cout<<"\n\n-------------BUS INFO------------";
     bus.open("buses.txt", ios::in | ios::app | ios::binary);
     if (bus.fail())
     {
@@ -107,7 +108,7 @@ void Bus::viewBusDetails()
             }
             bus.read((char *)this, sizeof(*this));
         }
-        if (check == 0)
+        if (check == FALSE)
         {
             cout << "\n\tBus Not Found...!!\n";
             cout<<"\nPress enter to continue..";
@@ -115,7 +116,7 @@ void Bus::viewBusDetails()
         }
         bus.close();
     }
-    //LOG_INFO("\nVIEW BUS INFO");
+    LOG_INFO("\nVIEW BUS INFO");
 }
 
 // EDIT BUS
@@ -157,7 +158,7 @@ void Bus::editBus()
                 cin.getline(sTime,BUFFER_SIZE);
                 cout << "\n\tEnter Destination Time:-> ";
                 cin.getline(dTime,BUFFER_SIZE);
-		cout << "\n\tEnter Bus Fare:-> ";
+                cout << "\n\tEnter Bus Fare:-> ";
                 cin.ignore();
                 cin >> fare;
                 setSource(s);
@@ -175,28 +176,30 @@ void Bus::editBus()
             bus.read((char *)this, sizeof(*this));
         }
 
-        if (check = 1)
+        if (check = TRUE)
         {
             cout << "\n\tBus Updated Successfully...!!\n";
+            getchar();
         }
         else
         {
             cout << "\n\tBus Not Found...!!\n";
+            getchar();
         }
-        cout<<"\nPress enter to continue..";
+        cout<<"\nPress enter to continue..\n";
         getchar();
         bus.close();
         temp.close();
         remove("buses.txt");
         rename("temp.txt", "buses.txt");
     }
-    //LOG_INFO("\nVIEW BUS");
+    LOG_INFO("\nVIEW BUS");
 }
 
 // DELETE BUS
 void Bus::deleteBus()
 {
-	system("clear");
+    system("clear");
     char bNo[SIZE];
     int check = 0;
     fstream bus, temp;
@@ -226,20 +229,22 @@ void Bus::deleteBus()
             bus.read((char *)this, sizeof(*this));
         }
 
-        if (check == 0)
+        if (check == FALSE)
         {
             cout << "\n\tBus Not Found...!!\n";
+            getchar();
         }
         else
         {
             cout << "\n\tBus Deleted...!!\n";
+            getchar();
         }
         cout<<"\nPress enter to continue..";
         getchar();
-	bus.close();
+        bus.close();
         temp.close();
         remove("buses.txt");
         rename("temp.txt", "buses.txt");
     }
-    //LOG_INFO("\nDELETE BUS");
+    LOG_INFO("\nDELETE BUS");
 }
