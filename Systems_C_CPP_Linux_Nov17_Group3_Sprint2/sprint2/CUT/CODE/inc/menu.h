@@ -11,6 +11,7 @@ class Menu
         Menu(){
             //LOG_INFO("\nDefault constructor of mainmenu invoked");
         }
+        void design();
         void welcomeScreen();
         void mainMenu();
         void adminLogin();
