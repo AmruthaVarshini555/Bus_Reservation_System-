@@ -38,7 +38,7 @@ public:
         return pnrNo;
     }
     char *getDate()
-	{
+    {
         return date;
     }
      // SETTERS
@@ -59,3 +59,4 @@ public:
         //LOG_INFO("\nDestructor of ticket invoked");
     }
 };
+#endif // __TICKET_H__
