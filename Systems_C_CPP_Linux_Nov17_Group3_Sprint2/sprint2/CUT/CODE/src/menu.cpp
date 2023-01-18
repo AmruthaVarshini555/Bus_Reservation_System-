@@ -1,3 +1,4 @@
+//Header files
 #include <iostream>
 #include<string>
 #include<cstring>
@@ -8,7 +9,12 @@
 #include"header.h"
 #include"logger.h"
 using namespace std;
-
+/*******************************************************************
+Function name    :  design function
+Description      :  This function is for design  of class menu
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 //design function
 void Menu::design(){
         int i;
@@ -16,7 +22,12 @@ void Menu::design(){
                 cout<<"*";
         }
 }
-
+/*******************************************************************
+Function name    :  Welcome screen
+Description      :  This function is for welcome screen of class menu
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 //welcome screen
 void Menu::welcomeScreen()
 {
@@ -30,7 +41,12 @@ void Menu::welcomeScreen()
     getchar();
     menu.mainMenu();
 }
-
+/*******************************************************************
+Function name    :  Main menu
+Description      :  This function is main menu of class menu
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 //main menu
 void Menu:: mainMenu()
 {
@@ -62,6 +78,13 @@ void Menu:: mainMenu()
         }
     }
 }
+
+/*******************************************************************
+Function name    :  Admin login
+Description      :  This function is for admin login of class menu
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 // Admin Login
 void Menu:: adminLogin()
@@ -101,7 +124,12 @@ void Menu:: adminLogin()
             admin.mainMenu();
     }
 }
-
+/*******************************************************************
+Function name    :  Admin menu 
+Description      :  This function is for admin menu of class menu
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 // admin menu functions
 void Menu::adminMenu()
 {
@@ -153,7 +181,12 @@ void Menu::adminMenu()
         }
     }
 }
-
+/*******************************************************************
+Function name    :  User login
+Description      :  This function is for user login of class menu
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 //userlogin
 void Menu::userLogin(){
     system("clear");
@@ -234,7 +267,12 @@ void Menu::userLogin(){
         }
 	}
 }
-
+/*******************************************************************
+Function name    :  valid string(user name)
+Description      :  This function is for valid string (user name)of class menu
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 void Menu:: valid(string str)
 {
     string user,dir;
@@ -258,6 +296,12 @@ void Menu:: valid(string str)
         valid(user);
     }
 }
+/*******************************************************************
+Function name    :  User menu
+Description      :  This function is for user menu of class menu
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 //User Menu
 void Menu::userMenu()
@@ -302,7 +346,12 @@ void Menu::userMenu()
         }
     }
 }
-
+/*******************************************************************
+Function name    :  View bookings menu
+Description      :  This function is for view bookings menu of class menu
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 //view bookings menu function
 void Menu::viewBookingsMenu()
 {
