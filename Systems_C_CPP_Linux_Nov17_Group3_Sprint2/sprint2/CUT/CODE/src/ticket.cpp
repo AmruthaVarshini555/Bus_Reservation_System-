@@ -1,3 +1,4 @@
+// Header files
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -30,6 +31,12 @@ using namespace std;
         if (n && n[0])
             strcpy(name, n);
     }
+/*******************************************************************
+Function name    :  Generate ticket
+Description      :  This function is to generate ticket of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 //generate ticket
 void Ticket::generateTicket(char *n, Bus b)
@@ -40,6 +47,13 @@ void Ticket::generateTicket(char *n, Bus b)
     strcpy(date, getCurrentDate().c_str());
     bus = b;
 }
+/*******************************************************************
+Function name    :  Book ticket
+Description      :  This function is to Book ticket of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
+
 // BOOK TICKET
 void Ticket::bookTicket()
 {
@@ -143,7 +157,12 @@ void Ticket::bookTicket()
     }
     LOG_INFO("\nBook Ticket");
 }
-
+/*******************************************************************
+Function name    :  Edit ticket
+Description      :  This function is to edit ticket of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 // EDIT TICKET
 void Ticket::editTicket()
@@ -208,6 +227,12 @@ void Ticket::editTicket()
     }
     LOG_INFO("\nEdit Ticket");
 }
+/*******************************************************************
+Function name    :  Display ticket
+Description      :  This function will display ticket of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 // DISPLAY TICKET DETAILS
 void Ticket::displayTicket()
@@ -229,7 +254,12 @@ void Ticket::displayTicket()
     LOG_INFO("\nDisplay Ticket");
     cout << "\n";
 }
-
+/*******************************************************************
+Function name    :  Cancel ticket
+Description      :  This function is to cancel ticket of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 // CANCEL TICKET
 void Ticket::cancelTicket()
@@ -306,8 +336,12 @@ void Ticket::cancelTicket()
     }
     //LOG_INFO("\nTicket cancel");
 }
-
-
+/*******************************************************************
+Function name    :  Show ticket by PNR
+Description      :  This function is to show ticket by PNR of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 // SHOW TICKET BY PNR
 void Ticket::showTicketsByPNR()
@@ -351,6 +385,12 @@ void Ticket::showTicketsByPNR()
     }
     //LOG_INFO("\nTicket by PNR");
 }
+/*******************************************************************
+Function name    :  Show ticket by name
+Description      :  This function is to show ticket by name of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 // SHOW TICKET BY NAME
 void Ticket::showTicketsByName()
@@ -390,6 +430,12 @@ void Ticket::showTicketsByName()
     }
     //LOG_INFO("\nTicket by name");
 }
+/*******************************************************************
+Function name    :  Show ticket by bus
+Description      :  This function is to show ticket by bus of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 // SHOW TICKET BY BUS
 void Ticket::showTicketsByBus()
@@ -432,7 +478,12 @@ void Ticket::showTicketsByBus()
     }
     LOG_INFO("\nTicket by bus");
 }
-
+/*******************************************************************
+Function name    :  Show ticket by source
+Description      :  This function is to show ticket by source of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 // SHOW TICKET BY SOURCE
 void Ticket::showTicketsBySource()
 {
@@ -476,6 +527,12 @@ void Ticket::showTicketsBySource()
 
     LOG_INFO("\nTicket by source");
 }
+/*******************************************************************
+Function name    :  Show ticket by destination
+Description      :  This function is to show ticket by destination of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 // SHOW TICKET BY DESTINATION
 void Ticket::showTicketsByDestination()
@@ -519,7 +576,12 @@ void Ticket::showTicketsByDestination()
     }
     LOG_INFO("\nShow By Destination");
 }
-
+/*******************************************************************
+Function name    :  Show all tickets
+Description      :  This function is to show all tickets of class ticket
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 // SHOW ALL BOOKINGS
 void Ticket::showAllTickets()
 {
