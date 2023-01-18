@@ -1,3 +1,4 @@
+// header file for menu
 #ifndef __MENU_H__
 #define __MENU_H__
 #include<iostream>
@@ -8,6 +9,7 @@ using namespace std;
 class Menu
 {
     public:
+        //member functions
         Menu(){
             //LOG_INFO("\nDefault constructor of mainmenu invoked");
         }
