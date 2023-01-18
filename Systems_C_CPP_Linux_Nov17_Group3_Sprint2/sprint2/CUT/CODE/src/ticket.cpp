@@ -10,6 +10,27 @@
 #include "utils.h"
 
 using namespace std;
+
+    // GETTERS
+    char Bus:: *getName()
+    {
+        return name;
+    }
+    char Bus:: *getPnrNo()
+    {
+        return pnrNo;
+    }
+    char Bus:: *getDate()
+    {
+        return date;
+    }
+     // SETTERS
+    void Bus::setName(char *n)
+    {
+        if (n && n[0])
+            strcpy(name, n);
+    }
+
 //generate ticket
 void Ticket::generateTicket(char *n, Bus b)
 {
