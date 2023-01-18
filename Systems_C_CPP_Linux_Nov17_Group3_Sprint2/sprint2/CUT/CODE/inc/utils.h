@@ -1,3 +1,4 @@
+//header file for utils
 #ifndef __UTILS_H__
 #define __UTILS_H__
 #include<iostream>
@@ -6,6 +7,7 @@
 #include <ctime>
 
 using namespace std;
+//this function for to generate PNR number and it allows the passenger to check or manage their bookings in short time.
 string generatePNR(int n)
 {
     srand(time(0));
@@ -15,6 +17,7 @@ string generatePNR(int n)
     return pnr;
 }
 
+//this function is used to get the date i.e local date
 string getCurrentDate()
 {
     time_t t = time(NULL);
