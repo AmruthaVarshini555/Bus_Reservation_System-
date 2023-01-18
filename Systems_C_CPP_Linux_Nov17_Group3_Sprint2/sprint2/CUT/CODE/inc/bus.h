@@ -1,3 +1,4 @@
+// Bus header file
 #ifndef __BUS_H__
 #define __BUS_H__
 #include"logger.h"
@@ -9,7 +10,8 @@ using namespace std;
 // CLASS BUS
 class Bus
 {
-public:
+public:   
+    //member functions
     Bus Bus(); //default constructor
    
     // METHODS
@@ -41,7 +43,8 @@ public:
     ~Bus(){
         LOG_INFO("\nBus Destructor invoked");
     }
-private:
+private: 
+    //data members
     int maxSeats, bookedSeats;
     double busFare;
     char busNo[SIZE], source[BUFFER_SIZE], destination[BUFFER_SIZE], sourceTime[BUFFER_SIZE], destinationTime[BUFFER_SIZE];    
