@@ -1,0 +1,30 @@
+==131== Process terminating with default action of signal 2 (SIGINT)
+==131==    at 0x4B5EFB2: read (read.c:26)
+==131==    by 0x4AE1D1E: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:517)
+==131==    by 0x4AE3105: _IO_default_uflow (genops.c:362)
+==131==    by 0x10CA12: Menu::userMenu() (in /home/system/bus3/busreservationsystem)
+==131==    by 0x10CA21: Menu::userMenu() (in /home/system/bus3/busreservationsystem)
+==131==    by 0x10CA21: Menu::userMenu() (in /home/system/bus3/busreservationsystem)
+==131==    by 0x10CA21: Menu::userMenu() (in /home/system/bus3/busreservationsystem)
+==131==    by 0x10CA21: Menu::userMenu() (in /home/system/bus3/busreservationsystem)
+==131==    by 0x10CA21: Menu::userMenu() (in /home/system/bus3/busreservationsystem)
+==131==    by 0x10CA21: Menu::userMenu() (in /home/system/bus3/busreservationsystem)
+==131==    by 0x10CA21: Menu::userMenu() (in /home/system/bus3/busreservationsystem)
+==131==    by 0x10CA21: Menu::userMenu() (in /home/system/bus3/busreservationsystem)
+==131==
+==131== HEAP SUMMARY:
+==131==     in use at exit: 173 bytes in 2 blocks
+==131==   total heap usage: 54 allocs, 50 frees, 291,409 bytes allocated
+==131==
+==131== LEAK SUMMARY:
+==131==    definitely lost: 0 bytes in 0 blocks
+==131==    indirectly lost: 0 bytes in 0 blocks
+==131==      possibly lost: 0 bytes in 0 blocks
+==131==    still reachable: 173 bytes in 2 blocks
+==131==         suppressed: 0 bytes in 0 blocks
+==131== Reachable blocks (those to which a pointer was found) are not shown.
+==131== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==131==
+==131== Use --track-origins=yes to see where uninitialised values come from
+==131== For lists of detected and suppressed errors, rerun with: -s
+==131== ERROR SUMMARY: 13 errors from 2 contexts (suppressed: 0 from 0)

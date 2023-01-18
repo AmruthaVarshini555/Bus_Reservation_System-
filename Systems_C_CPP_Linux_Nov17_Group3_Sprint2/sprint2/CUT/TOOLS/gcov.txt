@@ -1,0 +1,43 @@
+File 'main.cpp'
+Lines executed:93.87% of 199
+Creating 'main.cpp.gcov'
+
+File 'ticket.cpp'
+Lines executed:90.50% of 314
+Creating 'ticket.cpp.gcov'
+
+File 'bus.cpp'
+Lines executed:88.75% of 157
+Creating 'bus.cpp.gcov'
+
+File '/usr/include/c++/9/iostream'
+executable lines
+Removing 'iostream.gcov'
+
+File '/usr/include/c++/9/ext/new_allocator.h'
+Lines executed:88.20% of 2
+Creating 'new_allocator.h.gcov'
+
+File 'utils.h'
+Lines executed:0.00% of 10
+Creating 'utils.h.gcov'
+
+File 'ticket.h'
+Lines executed:0.00% of 10
+Creating 'ticket.h.gcov'
+
+File 'bus.h'
+Lines executed:0.00% of 35
+Creating 'bus.h.gcov'
+
+File '/usr/include/c++/9/iomanip'
+Lines executed:94.90% of 2
+Creating 'iomanip.gcov'
+
+File '/usr/include/c++/9/bits/ios_base.h'
+Lines executed:89.90% of 20
+Creating 'ios_base.h.gcov'
+
+File '/usr/include/c++/9/bits/char_traits.h'
+Lines executed:90.50% of 4
+Creating 'char_traits.h.gcov'

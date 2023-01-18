@@ -1,0 +1,60 @@
+//TestCases output for invalid username and password
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<TestRun>
+  <FailedTests>
+    <FailedTest id="1">
+      <Name>TestBasicMath::testPassword</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>TestBasicMath.cpp</File>
+        <Line>53</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: 1 == mTestObj-&gt;Password(&quot;Capg@12&quot;,&quot;Capg@123&quot;)
+</Message>
+    </FailedTest>
+    <FailedTest id="2">
+      <Name>TestBasicMath::testUser</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>TestBasicMath.cpp</File>
+        <Line>59</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: 1 == mTestObj-&gt;userName(&quot;group&quot;,&quot;group3&quot;)
+</Message>
+    </FailedTest>
+  </FailedTests>
+  <SuccessfulTests></SuccessfulTests>
+  <Statistics>
+    <Tests>2</Tests>
+    <FailuresTotal>2</FailuresTotal>
+    <Errors>0</Errors>
+    <Failures>2</Failures>
+  </Statistics>
+</TestRun>
+
+//Unit testcase for valid username and password
+system@INLEN8520061965:~/bus3/testing/testing$ ./test
+TestBasicMath::testPassword : OK
+TestBasicMath::testUser : OK
+OK (2)
+
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<TestRun>
+  <FailedTests></FailedTests>
+  <SuccessfulTests>
+    <Test id="1">
+      <Name>TestBasicMath::testPassword</Name>
+    </Test>
+    <Test id="2">
+      <Name>TestBasicMath::testUser</Name>
+    </Test>
+  </SuccessfulTests>
+  <Statistics>
+    <Tests>2</Tests>
+    <FailuresTotal>0</FailuresTotal>
+    <Errors>0</Errors>
+    <Failures>0</Failures>
+  </Statistics>
+</TestRun>
