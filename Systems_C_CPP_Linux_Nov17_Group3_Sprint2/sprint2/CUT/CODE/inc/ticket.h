@@ -9,13 +9,11 @@
 // CLASS TICKET
 class Ticket
 {
-private:
-    char name[BUFFER_SIZE], pnrNo[SIZE], date[BUFFER_SIZE];
-    Bus bus;
 public:
     Ticket(){
         LOG_INFO("\nTicket Default Constructor invoked");
     }
+    //Member functions
     void generateTicket(char *, Bus);
     void displayTicket();
     void bookTicket();
@@ -33,6 +31,11 @@ public:
     char *getDate();
     // SETTERS
     void setName(char*);
+    
+    private:
+    //data members
+    char name[BUFFER_SIZE], pnrNo[SIZE], date[BUFFER_SIZE];
+    Bus bus;
  
     ~Ticket(){
         LOG_INFO("\nDestructor of ticket invoked");
