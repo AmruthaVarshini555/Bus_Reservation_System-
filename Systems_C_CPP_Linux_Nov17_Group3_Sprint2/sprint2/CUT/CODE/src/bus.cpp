@@ -1,3 +1,4 @@
+//headers files
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -90,6 +91,14 @@ void Bus:: setBusFare(double f)
         if (f)
             busFare = f;
     }
+
+/*******************************************************************
+Function name    :  Add bus
+Description      :  This function will create a bus of class bus
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
+
 // ADD BUS
 void Bus::addBus()
 {
@@ -123,6 +132,13 @@ void Bus::addBus()
     bus.close();
     LOG_INFO("\nADDED THE BUS");
 }
+/*******************************************************************
+Function name    :  showAllBus
+Description      :  This function is to view all buses of class bus
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
+
 // SHOW BUS DETAILS
 void Bus::showBusDetails()
 {
@@ -139,6 +155,12 @@ void Bus::showBusDetails()
     getchar();
     LOG_INFO("SHOW BUS DETAILS");
 }
+/*******************************************************************
+Function name    :  view bus details
+Description      :  This function is to view bus details of class bus
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 // VIEW ALL BUS INFO
 void Bus::showAllBus()
@@ -165,6 +187,13 @@ void Bus::showAllBus()
     }
     LOG_INFO("\nVIEW ALL BUS INFO");
 }
+/*******************************************************************
+Function name    :  Show all bus
+Description      :  This function is for show all bus of class bus
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
+
 //Show bus details
 void Bus::viewBusDetails()
 {
@@ -207,6 +236,13 @@ void Bus::viewBusDetails()
     }
     LOG_INFO("\nVIEW BUS INFO");
 }
+
+/*******************************************************************
+Function name    :  Edit bus
+Description      :  This function is used to edit bus of class bus
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 
 // EDIT BUS
 void Bus::editBus()
@@ -285,7 +321,12 @@ void Bus::editBus()
     }
     LOG_INFO("\nVIEW BUS");
 }
-
+/*******************************************************************
+Function name    :  Delete bus
+Description      :  This function is used to delete bus of class bus
+Parameters       :  No parameters
+Return type      :  No return type
+*********************************************************************/
 // DELETE BUS
 void Bus::deleteBus()
 {
