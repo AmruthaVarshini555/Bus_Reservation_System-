@@ -1,4 +1,3 @@
-//Client file
 #include <iostream>
 #include<string>
 #include<cstring>
@@ -13,5 +12,3 @@ int main()
     display.welcomeScreen();
     return EXIT_SUCCESS;
 }
-
-

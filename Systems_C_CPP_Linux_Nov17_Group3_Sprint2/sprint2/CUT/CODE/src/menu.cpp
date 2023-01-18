@@ -38,7 +38,7 @@ void Menu:: mainMenu()
     Menu obj1;
     while(TRUE)
     {
-        system("clear");
+	 system("clear");
         obj1.design();
         cout<<"\n\n\tMAIN MENU\n\n";
         obj1.design();
@@ -68,6 +68,7 @@ void Menu:: adminLogin()
 {
     system("clear");
     Menu admin;
+    int flag=0;
     string adminUsername, adminPassword;
     admin.design();
     cout<<"\n\n\tADMIN LOGIN\n\n";
@@ -77,19 +78,28 @@ void Menu:: adminLogin()
     cin>>adminUsername;
     cout<<"\nEnter Password: ";
     cin>>adminPassword;
-    if(adminUsername == USERNAME && adminPassword == PASSWORD)
+    if(flag<=3)
     {
-        cout<<"Logged in successfully...\n";
-        getchar();
-        admin.adminMenu();
-    }
-    else
-    {
+        if(adminUsername == USERNAME && adminPassword == PASSWORD)
+        {
+                cout<<"\nLogged in successfully...\n";
+                getchar();
+                admin.adminMenu();
+        }
+        else
+        {
         cout<<"\nEntered wrong username or password..\n";
+        cout<<"\nPlease enter correct password to continue..\n";
+        flag++;
         getchar();
         admin.adminLogin();
+        }
+     }
+    else{
+            cout<<"Too many attempts..";
+            getchar();
+            admin.mainMenu();
     }
-
 }
 
 // admin menu functions
@@ -107,7 +117,7 @@ void Menu::adminMenu()
         m.design();
         cout<<"\n\t1. Add Bus\n";
         cout<<"\n\t2. View Bus\n";
-        cout<<"\n\t3. Edit Bus\n";
+	cout<<"\n\t3. Edit Bus\n";
         cout<<"\n\t4. Delete Bus\n";
         cout<<"\n\t5. Show All buses\n";
         cout<<"\n\t6. View Bookings\n";
@@ -117,19 +127,26 @@ void Menu::adminMenu()
         switch(choice)
         {
             case ADDBUS: b.addBus();
-                    break;
+                         getchar();
+                         break;
             case VIEWBUS: b.viewBusDetails();
-                    break;
+                          getchar();
+                          break;
             case EDITBUS: b.editBus();
-                    break;
+                          getchar();
+                          break;
             case DELETEBUS: b.deleteBus();
-                    break;
+                            getchar();
+                            break;
             case SHOWALLBUS: b.showAllBus();
-                    break;
+                             getchar();
+                             break;
             case BOOKINGSMENU: m.viewBookingsMenu();
-                    break;
+                               getchar();
+                               break;
             case BACK: m.mainMenu();
-                    break;
+                       getchar();
+                        break;
             default : cout<<"Invaild choice\n";
                       getchar();
                       m.adminMenu();
@@ -142,7 +159,7 @@ void Menu::userLogin(){
     system("clear");
     Menu login;
     int ch,tm=0;
-    string name,username,usrname,password,pswd,fname,line;
+    string name,username,usrname,password,pswd,line,fname;
     ofstream fileo;
     ifstream filei;
     login.design();
@@ -154,7 +171,8 @@ void Menu::userLogin(){
     cout<<"\nEnter your choice: ";
     cin>>ch;
     while(TRUE){
-    switch(ch){
+        switch(ch)
+        {
         case LOGIN:
             cout<<"\nEnter username: ";
             cin>>username;
@@ -164,7 +182,7 @@ void Menu::userLogin(){
             filei.open(fname.c_str());
             if(!filei.is_open() && filei.fail())
             {
-                cout<<"\nYou are not registered, please register before login\n";
+                cout<<"\nYou are not registered, please register before login\n\t\t'OR'\n";
                 getchar();
                 filei.close();
                 //continue;
@@ -174,7 +192,7 @@ void Menu::userLogin(){
             getline(filei,pswd);
             if(username==usrname && password==pswd)
             {
-                cout<<"\n%s are successfully logged in :)\n"<<usrname;
+		cout<<"\nYou are successfully logged in :)\n";
                 getchar();
                 login.userMenu();
                 filei.close();
@@ -192,9 +210,9 @@ void Menu::userLogin(){
             getline(cin,name);
             cout<<"\nCreate username: ";
             cin>>username;
-            valid(username);
+           // valid(username);
             if(tm>=3){
-                //continue;
+                    //continue;
             }
             cout<<"\nCreate Password: ";
             cin>>password;
@@ -208,13 +226,13 @@ void Menu::userLogin(){
             break;
         case PREVIOUS: login.mainMenu();
                 break;
-        default: 
+        default:
                 cout<<"\n Invalid choice..\n";
                 getchar();
                 break;
 
         }
-    }
+	}
 }
 
 void Menu:: valid(string str)
@@ -223,7 +241,7 @@ void Menu:: valid(string str)
     int tm=0;
     ifstream file;
     dir=str+".txt";
-    file.open(dir.c_str());
+    file.open("user.txt");
     if(!file.is_open() && file.fail())
     {
         return;
@@ -235,7 +253,7 @@ void Menu:: valid(string str)
             cout<<"\nThis username already exists\nPlease try again";
             return;
         }
-        cout<<"\nThis username already exists\n Create username: ";
+        //cout<<"\nThis username already exists\n Create username: ";
         cin>>user;
         valid(user);
     }
@@ -252,7 +270,7 @@ void Menu::userMenu()
         system("clear");
         m.design();
         cout<<"\n\n\t\tUSER MENU\n\n";
-        m.design();
+	m.design();
         cout<<"\n\t1. Book Ticket";
         cout<<"\n\t2. View Ticket";
         cout<<"\n\t3. Edit Ticket";
@@ -263,13 +281,17 @@ void Menu::userMenu()
         switch(choice)
         {
             case BOOKTICKET: t.bookTicket();
-                    break;
+                             getchar();
+                             break;
             case VIEWTICKET: t.showTicketsByPNR();
-                    break;
+                             getchar();
+                             break;
             case EDITTICKET: t.editTicket();
-                    break;
+                             getchar();
+                             break;
             case CANCELTICKET: t.cancelTicket();
-                    break;
+                               getchar();
+                               break;
             case GOBACK: m.mainMenu();
                     break;
             default:
@@ -277,7 +299,6 @@ void Menu::userMenu()
                 cout<<"\nPress enter to continue..\n";
                 getchar();
                 m.userMenu();
-                break;
         }
     }
 }
@@ -305,21 +326,25 @@ void Menu::viewBookingsMenu()
         switch(choice)
         {
             case TICKETBYPNR: t.showTicketsByPNR();
-                    break;
+                              getchar();
+                                break;
             case TICKETBYNAME: t.showTicketsByName();
-                    break;
+                               getchar();
+                               break;
             case TICKETBYBUS: t.showTicketsByBus();
-                    break;
+                              getchar();
+                              break;
             case TICKETBYSOURCE: t.showTicketsBySource();
-                    break;
+                                 getchar();
+                                 break;
             case TICKETBYDESTINATION: t.showTicketsByDestination();
-                    break;
+                                      getchar();
+                                      break;
             case MENU: m.adminMenu();
                     break;
             default: cout<<"\nInvaild choice\n";
                      getchar();
                      m.viewBookingsMenu();
-                     break;
         }
    }
 }

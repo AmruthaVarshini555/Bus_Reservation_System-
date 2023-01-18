@@ -17,22 +17,28 @@ void Bus::addBus()
     system("clear");
     cout<<"\n--------ADD BUS---------\n";
     cout << "\nEnter Bus Number: ";
+    //cin>>busNo;
     cin.ignore();
-    cin.getline(busNo, SIZE);
+    cin.getline(busNo,SIZE);
     cout << "\nEnter Source:-> ";
+    //cin>>source;
     cin.getline(source,BUFFER_SIZE);
     cout << "\nEnter Destination:-> ";
+    //cin>>destination;
     cin.getline(destination,BUFFER_SIZE);
     cout << "\nEnter Source Time:-> ";
+    //cin>>sourceTime;
     cin.getline(sourceTime,BUFFER_SIZE);
     cout << "\nEnter Destination Time:-> ";
+    //cin>>destinationTime;
     cin.getline(destinationTime,BUFFER_SIZE);
     cout << "\nEnter Bus Fare:-> ";
-    cin >> busFare;
+    cin>>busFare;
     cout << "\nBus Added Successfully...!!\n";
-    cout<<"\nPress enter to continue..";
+    cout<<"\nPress enter to continue..\n";
     getchar();
     bus.open("buses.txt", ios::out | ios::app);
+    //bus<<busNo<<","<<source<<","<<destination<<","<<sourceTime<<","<<destinationTime<<","<<busFare<<endl;
     bus.write((char *)this, sizeof(*this));
     bus.close();
     LOG_INFO("\nADDED THE BUS");
@@ -40,7 +46,7 @@ void Bus::addBus()
 // SHOW BUS DETAILS
 void Bus::showBusDetails()
 {
-    cout<<"\n-------------------BUS--------------------";
+    cout<<"\n\n\n-------------BUS--------------";
     cout << "\n\nBus No:-> " << getBusNo();
     cout << "\nSource:-> " << getSource();
     cout << "\nDestination:-> " << getDestination();
@@ -68,9 +74,11 @@ void Bus::showAllBus()
     {
         cout<<"\n-----------BUSES-----------";
         bus.read((char *)this, sizeof(*this));
+        //bus>>busNo>>source>>destination>>sourceTime>>destinationTime>>maxSeats>>bookedSeats>>busFare;
         while (!bus.eof())
         {
-            showBusDetails();
+		showBusDetails();
+            //bus>>busNo>>source>>destination>>sourceTime>>destinationTime>>maxSeats>>bookedSeats>>busFare;
             bus.read((char *)this, sizeof(*this));
         }
         bus.close();
@@ -88,7 +96,7 @@ void Bus::viewBusDetails()
     cout << "\n\tEnter Bus Number:-> ";
     cin.ignore();
     cin.getline(bNo,SIZE);
-
+    //cin>>bNo;
     system("clear");
     cout<<"\n\n-------------BUS INFO------------";
     bus.open("buses.txt", ios::in | ios::app | ios::binary);
@@ -98,6 +106,7 @@ void Bus::viewBusDetails()
     }
     else
     {
+        //bus>>busNo>>source>>destination>>sourceTime>>destinationTime>>maxSeats>>bookedSeats>>busFare;
         bus.read((char *)this, sizeof(*this));
         while (!bus.eof())
         {
@@ -106,7 +115,7 @@ void Bus::viewBusDetails()
                 showBusDetails();
                 check = 1;
             }
-            bus.read((char *)this, sizeof(*this));
+	    bus.read((char *)this, sizeof(*this));
         }
         if (check == FALSE)
         {
@@ -127,10 +136,11 @@ void Bus::editBus()
     int check = 0;
 
     fstream bus, temp;
-    cout<<"\n----------EDIT BUS-----------";
+    cout<<"\n\n\n----------EDIT BUS-----------";
     cout << "\n\tEnter Bus Number:-> ";
     cin.ignore();
     cin.getline(bNo,SIZE);
+    //cin>>bNo;
     bus.open("buses.txt", ios::in | ios::app | ios::binary);
     if (bus.fail())
     {
@@ -144,7 +154,7 @@ void Bus::editBus()
         while (!bus.eof())
         {
             if (strcmp(getBusNo(), bNo) == 0)
-            {
+	    {
                 system("clear");
                 cout<<"\n-----------EDIT BUS-------------";
                 showBusDetails();
@@ -176,14 +186,14 @@ void Bus::editBus()
             bus.read((char *)this, sizeof(*this));
         }
 
-        if (check = TRUE)
+        if (check = FALSE)
         {
             cout << "\n\tBus Updated Successfully...!!\n";
             getchar();
         }
         else
         {
-            cout << "\n\tBus Not Found...!!\n";
+	    cout << "\n\tBus Not Found...!!\n";
             getchar();
         }
         cout<<"\nPress enter to continue..\n";
@@ -222,7 +232,7 @@ void Bus::deleteBus()
             {
                 temp.write((char *)this, sizeof(*this));
             }
-            else
+	else
             {
                 check = 1;
             }

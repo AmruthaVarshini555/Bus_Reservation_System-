@@ -26,6 +26,7 @@ void Ticket::bookTicket()
     char source[BUFFER_SIZE], destination[BUFFER_SIZE];
     int check = 0;
     Bus b;
+    b.showAllBus();
     fstream bus, ticket, temp;
     cout<<"\n------------BOOK TICKET-------------";
     bus.open("buses.txt", ios::in | ios::app | ios::binary);
@@ -37,7 +38,7 @@ void Ticket::bookTicket()
     {
         cout << "\n\tEnter Source:-> ";
         cin.ignore();
-        cin.getline(source,BUFFER_SIZE);
+	cin.getline(source,BUFFER_SIZE);
         cout << "\n\tEnter Destination:-> ";
         cin.getline(destination, BUFFER_SIZE);
 
@@ -76,7 +77,7 @@ void Ticket::bookTicket()
                     {
                         cout << "\n\tSeat not available...!!\n";
                         cout<<"\nPress enter to continue..";
-                        getchar();
+			getchar();
                          break;
                     }
                     else
@@ -116,10 +117,10 @@ void Ticket::bookTicket()
             }
         }
          cout<<"\nPress enter to continue..";
-        getchar();
+	getchar();
         bus.close();
     }
-    //LOG_INFO("\nBook Ticket");
+    LOG_INFO("\nBook Ticket");
 }
 
 
@@ -156,7 +157,7 @@ void Ticket::editTicket()
                 char n[BUFFER_SIZE];
                 cout << "\n\tEnter Passenger Name :-> ";
                 cin.getline(n, BUFFER_SIZE);
-                setName(n);
+		setName(n);
                 temp.write((char *)this, sizeof(*this));
                 check = 1;
             }
@@ -184,7 +185,7 @@ void Ticket::editTicket()
         remove("tickets.txt");
         rename("temp.txt", "tickets.txt");
     }
-    //LOG_INFO("\nEdit Ticket");
+    LOG_INFO("\nEdit Ticket");
 }
 
 // DISPLAY TICKET DETAILS
@@ -193,14 +194,14 @@ void Ticket::displayTicket()
     cout << "\n-----------DISPLAY TICKET-------------\n";
     cout << "\n\t Name:-> " << getName();
     cout << "\n\t PNR No:-> " << getPnrNo();
-     cout << "\n\t Bus No:-> " << bus.getBusNo();
+    cout << "\n\t Bus No:-> " << bus.getBusNo();
     cout << "\n\t Seat No.:-> " << bus.getBookedSeats();
     cout << "\n\t Date:-> " << getDate();
     cout << "\n\t Source:-> " << bus.getSource();
     cout << "\n\t Destination:-> " << bus.getDestination();
     cout << "\n\t Start Time:-> " << bus.getSourceTime();
     cout << "\n\t Destination Time:-> " << bus.getDestinationTime();
-    cout << fixed << setprecision(2);
+    //cout << fixed << setprecision(2);
     cout << "\n\t Bus Fare:-> " << bus.getBusFare();
     cout<<"\nPress enter to continue...";
     getchar();
@@ -235,7 +236,7 @@ void Ticket::cancelTicket()
              if (strcmp(getPnrNo(), pnr) != 0)
             {
                 temp.write((char *)this, sizeof(*this));
-            }
+		 }
             else
             {
                 Bus b;
@@ -263,7 +264,7 @@ void Ticket::cancelTicket()
             }
             ticket.read((char *)this, sizeof(*this));
         }
-        if (check == TRUE)
+        if (check == FALSE)
         {
             ticket.close();
             temp.close();
@@ -274,7 +275,7 @@ void Ticket::cancelTicket()
         else
         {
             ticket.close();
-            temp.close();
+	    temp.close();
             remove("tickets.txt");
             rename("temp.txt", "tickets.txt");
             cout << "\n\tTicket Cancelled...!!\n";
@@ -313,7 +314,7 @@ void Ticket::showTicketsByPNR()
         while (!ticket.eof())
         {
             if (strcmp(getPnrNo(), pnr) == FALSE)
-            {
+		{
                 displayTicket();
                 check = 1;
             }
@@ -352,7 +353,7 @@ void Ticket::showTicketsByName()
     {
         ticket.read((char *)this, sizeof(*this));
         while (!ticket.eof())
-        {
+	{
             if (strcmp(getName(), n) == FALSE)
             {
                 displayTicket();
@@ -386,12 +387,11 @@ void Ticket::showTicketsByBus()
     cout<<"\n-----------BOOKINGS--------------";
     ticket.open("tickets.txt", ios::in | ios::app | ios::binary);
     if (ticket.fail())
-    {
-        cout << "\n\tCan't Open File...!!\n";
-    }
-
+    	{
+	        cout << "\n\tCan't Open File...!!\n";
+    	}
     else
-    {
+	{
         ticket.read((char *)this, sizeof(*this));
         while (!ticket.eof())
         {
@@ -409,7 +409,7 @@ void Ticket::showTicketsByBus()
         }
         ticket.close();
     }
-   // LOG_INFO("\nTicket by bus");
+    LOG_INFO("\nTicket by bus");
 }
 
 // SHOW TICKET BY SOURCE
@@ -430,7 +430,7 @@ void Ticket::showTicketsBySource()
     ticket.open("tickets.txt", ios::in | ios::app | ios::binary);
     if (ticket.fail())
     {
-        cout << "\n\tCan't Open File...!!\n";
+	 cout << "\n\tCan't Open File...!!\n";
     }
 
     else
@@ -453,7 +453,7 @@ void Ticket::showTicketsBySource()
         ticket.close();
     }
 
-   // LOG_INFO("\nTicket by source");
+    LOG_INFO("\nTicket by source");
 }
 
 // SHOW TICKET BY DESTINATION
@@ -468,7 +468,7 @@ void Ticket::showTicketsByDestination()
     cout<<"---SHOW BOOKINGS BY DESTINATION---";
     cout << "\n\tEnter Destination:-> ";
     cin.ignore();
-     cin.getline(d, BUFFER_SIZE);
+    cin.getline(d, BUFFER_SIZE);
     system("clear");
     cout<<"\n-----------BOOKINGS---------";
 
@@ -496,7 +496,7 @@ void Ticket::showTicketsByDestination()
         }
         ticket.close();
     }
-    //LOG_INFO("\nShow By Destination");
+    LOG_INFO("\nShow By Destination");
 }
 
 // SHOW ALL BOOKINGS
@@ -522,5 +522,7 @@ void Ticket::showAllTickets()
         }
         ticket.close();
     }
-    //LOG_INFO("\nShow All Bookings");
+    LOG_INFO("\nShow All Bookings");
 }
+
+	
