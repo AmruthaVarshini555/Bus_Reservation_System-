@@ -14,7 +14,7 @@ private:
     Bus bus;
 public:
     Ticket(){
-        //LOG_INFO("\nTicket Default Constructor invoked");
+        LOG_INFO("\nTicket Default Constructor invoked");
     }
     void generateTicket(char *, Bus);
     void displayTicket();
@@ -27,36 +27,15 @@ public:
     void showTicketsBySource();
     void showTicketsByDestination();
     void showAllTickets();
-
     // GETTERS
-    char *getName()
-    {
-        return name;
-    }
-    char *getPnrNo()
-    {
-        return pnrNo;
-    }
-    char *getDate()
-    {
-        return date;
-    }
-     // SETTERS
-    void setName(char *n)
-    {
-        if (n && n[0])
-            strcpy(name, n);
-    }
-
-    /*// GETTERS
     char *getName();
     char *getPnrNo();
     char *getDate();
     // SETTERS
     void setName(char*);
-    */
+ 
     ~Ticket(){
-        //LOG_INFO("\nDestructor of ticket invoked");
+        LOG_INFO("\nDestructor of ticket invoked");
     }
 };
 #endif // __TICKET_H__
