@@ -11,7 +11,6 @@
 class Ticket
 {
 public:
-  
     Ticket(){
         LOG_INFO("\nTicket Default Constructor invoked");
     }
@@ -28,19 +27,31 @@ public:
     void showTicketsByDestination();
     void showAllTickets();
     // GETTERS
-    char *getName();
-    char *getPnrNo();
-    char *getDate();
-    // SETTERS
-    void setName(char*);
-    
+    char Bus:: *getName()
+    {
+        return name;
+    }
+    char Bus:: *getPnrNo()
+    {
+        return pnrNo;
+    }
+    char Bus:: *getDate()
+    {
+        return date;
+    }
+     // SETTERS
+    void Bus::setName(char *n)
+    {
+        if (n && n[0])
+            strcpy(name, n);
+    };
+    //Default Constructor
+    ~Ticket(){
+        LOG_INFO("\nDestructor of ticket invoked");
+    }
     private:
     //data members
     char name[BUFFER_SIZE], pnrNo[SIZE], date[BUFFER_SIZE];
     Bus bus;
- 
-    ~Ticket(){
-        LOG_INFO("\nDestructor of ticket invoked");
-    }
 };
 #endif // __TICKET_H__
