@@ -92,6 +92,13 @@ char *getBusNo()
         if (f)
             busFare = f;
     }
+    // METHODS
+    void addBus();
+    void showAllBus();
+    void showBusDetails();
+    void viewBusDetails();
+    void deleteBus();
+    void editBus();
     
     ~Bus(){
         LOG_INFO("\nBus Destructor invoked");
