@@ -27,20 +27,20 @@ public:
     void showTicketsByDestination();
     void showAllTickets();
     // GETTERS
-    char Bus:: *getName()
+    char *getName()
     {
         return name;
     }
-    char Bus:: *getPnrNo()
+    char *getPnrNo()
     {
         return pnrNo;
     }
-    char Bus:: *getDate()
+    char *getDate()
     {
         return date;
     }
      // SETTERS
-    void Bus::setName(char *n)
+    void setName(char *n)
     {
         if (n && n[0])
             strcpy(name, n);
