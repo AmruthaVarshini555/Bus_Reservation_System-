@@ -11,7 +11,7 @@ using namespace std;
 class Bus
 {
 public:   
-    Bus::Bus()
+ Bus()
 {
         strcpy(busNo, "");
         maxSeats = TOTALSEATS;
@@ -25,69 +25,69 @@ public:
 }
 
 //Getters
-char Bus::*getBusNo()
+char *getBusNo()
     {
         return busNo;
     }
 
-    char Bus:: *getSource()
+    char *getSource()
     {
         return source;
     }
-    char Bus:: *getDestination()
+    char *getDestination()
     {
         return destination;
     }
-    char Bus::*getSourceTime()
+    char *getSourceTime()
     {
         return sourceTime;
     }
-    char Bus::*getDestinationTime()
+    char *getDestinationTime()
     {
         return destinationTime;
     }
-    int Bus:: getBookedSeats()
+    int getBookedSeats()
     {
         return bookedSeats;
     }
-    int Bus:: getMaxSeats()
+    int getMaxSeats()
     {
         return maxSeats;
     }
-    double Bus:: getBusFare()
+    double getBusFare()
     {
         return busFare;
     }
  // SETTERS
-    void Bus::setBookedSeats()
+    void setBookedSeats()
     {
         bookedSeats=bookedSeats + 1;
     }
-    void Bus::setCancelTicket()
+    void setCancelTicket()
     {
        bookedSeats=bookedSeats - 1;
     }
-    void Bus:: setSource(char *s)
+    void setSource(char *s)
     {
         if (s && s[0])
             strcpy(source, s);
     }
-    void Bus:: setDestination(char *d)
+    void setDestination(char *d)
     {
         if (d && d[0])
             strcpy(destination, d);
     }
-    void Bus:: setSourceTime(char *s)
+    void setSourceTime(char *s)
     {
         if (s && s[0])
             strcpy(sourceTime, s);
     }
-   void  Bus::setDestinationTime(char *d)
+   void setDestinationTime(char *d)
     {
         if (d && d[0])
             strcpy(destinationTime, d);
     }
-    void Bus:: setBusFare(double f)
+    void setBusFare(double f)
     {
         if (f)
             busFare = f;
