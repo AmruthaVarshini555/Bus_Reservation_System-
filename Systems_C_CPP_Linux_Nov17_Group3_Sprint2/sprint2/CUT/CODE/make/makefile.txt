@@ -1,7 +1,7 @@
-BIN = /home/system/Bus_Reservation_System/sprint2/CUT/CODE/bin
-INC = /home/system/Bus_Reservation_System/sprint2/CUT/CODE/inc
-SRC = /home/system/Bus_Reservation_System/sprint2/CUT/CODE/src
-OBJ = /home/system/Bus_Reservation_System/sprint2/CUT/CODE/obj
+BIN = /home/system/Bus_Reservation_System-/Systems_C_CPP_Linux_Nov17_Group3_Sprint2/sprint2/CUT/CODE/bin
+INC = /home/system/Bus_Reservation_System-/Systems_C_CPP_Linux_Nov17_Group3_Sprint2/sprint2/CUT/CODE/inc
+SRC = /home/system/Bus_Reservation_System-/Systems_C_CPP_Linux_Nov17_Group3_Sprint2/sprint2/CUT/CODE/src
+OBJ = /home/system/Bus_Reservation_System-/Systems_C_CPP_Linux_Nov17_Group3_Sprint2/sprint2/CUT/CODE/obj
 
 CFLAGS = -c -g -Wall
 LFLAGS = -o
@@ -13,18 +13,22 @@ all: $(BIN)/busreservationsystem
 
 $(OBJ)/main.o : $(SRC)/main.cpp
         $(GCC) $(CFLAGS) $(SRC)/main.cpp $(IFLAGS)
-        mv *.o /home/system/Bus_Reservation_System/sprint2/CUT/CODE/obj
+        mv *.o /home/system/Bus_Reservation_System-/Systems_C_CPP_Linux_Nov17_Group3_Sprint2/sprint2/CUT/CODE/obj
+        
+$(OBJ)/menu.o : $(SRC)/menu.cpp
+        $(GCC) $(CFLAGS) $(SRC)/menu.cpp $(IFLAGS)
+        mv *.o /home/system/Bus_Reservation_System-/Systems_C_CPP_Linux_Nov17_Group3_Sprint2/sprint2/CUT/CODE/obj
 
 $(OBJ)/bus.o : $(SRC)/bus.cpp
         $(GCC) $(CFLAGS) $(SRC)/bus.cpp $(IFLAGS)
-        mv *.o /home/system/Bus_Reservation_System/sprint2/CUT/CODE/obj
+        mv *.o /home/system/Bus_Reservation_System-/Systems_C_CPP_Linux_Nov17_Group3_Sprint2/sprint2/CUT/CODE/obj
 
 $(OBJ)/ticket.o : $(SRC)/ticket.cpp
         $(GCC) $(CFLAGS) $(SRC)/ticket.cpp $(IFLAGS)
-        mv *.o /home/system/Bus_Reservation_System/sprint2/CUT/CODE/obj
+        mv *.o /home/system/Bus_Reservation_System-/Systems_C_CPP_Linux_Nov17_Group3_Sprint2/sprint2/CUT/CODE/obj
 
-$(BIN)/busreservationsystem : $(OBJ)/main.o $(OBJ)/bus.o $(OBJ)/ticket.o
-        $(GCC) $(OBJ)/main.o $(OBJ)/bus.o $(OBJ)/ticket.o $(LFLAGS) $(BIN)/busreservationsystem
+$(BIN)/busreservationsystem : $(OBJ)/main.o $(OBJ)/menu.o $(OBJ)/bus.o $(OBJ)/ticket.o
+        $(GCC) $(OBJ)/main.o $(OBJ)/menu.o $(OBJ)/bus.o $(OBJ)/ticket.o $(LFLAGS) $(BIN)/busreservationsystem
 
 clean:
         rm *.o
