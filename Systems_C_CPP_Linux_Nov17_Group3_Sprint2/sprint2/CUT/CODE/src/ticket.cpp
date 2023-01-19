@@ -12,25 +12,6 @@
 
 using namespace std;
 
-    // GETTERS
-    char Bus:: *getName()
-    {
-        return name;
-    }
-    char Bus:: *getPnrNo()
-    {
-        return pnrNo;
-    }
-    char Bus:: *getDate()
-    {
-        return date;
-    }
-     // SETTERS
-    void Bus::setName(char *n)
-    {
-        if (n && n[0])
-            strcpy(name, n);
-    }
 /*******************************************************************
 Function name    :  Generate ticket
 Description      :  This function is to generate ticket of class ticket
