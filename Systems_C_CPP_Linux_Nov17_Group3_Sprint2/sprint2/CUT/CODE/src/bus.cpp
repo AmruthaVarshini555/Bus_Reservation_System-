@@ -302,7 +302,7 @@ void Bus::editBus()
             bus.read((char *)this, sizeof(*this));
         }
 
-        if (check = FALSE)
+        if (check == FALSE)
         {
             cout << "\n\tBus Updated Successfully...!!\n";
             getchar();
