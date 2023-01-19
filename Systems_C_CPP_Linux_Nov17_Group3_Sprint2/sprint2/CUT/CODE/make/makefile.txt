@@ -31,5 +31,4 @@ $(BIN)/busreservationsystem : $(OBJ)/main.o $(OBJ)/menu.o $(OBJ)/bus.o $(OBJ)/ti
         $(GCC) $(OBJ)/main.o $(OBJ)/menu.o $(OBJ)/bus.o $(OBJ)/ticket.o $(LFLAGS) $(BIN)/busreservationsystem
 
 clean:
-        rm *.o
-        rm *.gch
+        rm *.o /home/system/Bus_Reservation_System-/Systems_C_CPP_Linux_Nov17_Group3_Sprint2/sprint2/CUT/CODE/obj
